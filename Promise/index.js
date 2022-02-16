@@ -1,6 +1,6 @@
 let divForCountry = document.querySelectorAll("country")[0];
 const requestOne = `https://restcountries.com/v3.1/name/peru`;
-function makeRequestToUnsplash(requestUrl) {
+function makeRequest(requestUrl) {
   fetch(requestUrl)
     .then((res) => res.json())
     .then((data) => {
@@ -21,4 +21,4 @@ function createCountry(countryObj) {
   countryDiv.append(span);
   divForCountry.append(countryDiv);
 }
-console.log(makeRequestToUnsplash(requestOne));
+console.log(makeRequest(requestOne));
