@@ -30,6 +30,17 @@ h1 {
   text-align: center;
   font-size: 40px;
 }
+input {
+  width: 200px;
+  height: 30px;
+}
+button {
+  width: 200px;
+  height: 30px;
+  background-color: blueviolet;
+  color: wheat;
+  margin: 10px auto;
+}
 #country-box {
   display: flex;
   flex-direction: row;
