@@ -1,7 +1,9 @@
-let divForCountry = document.querySelectorAll("country")[0];
-const requestOne = `https://restcountries.com/v3.1/name/peru`;
-function makeRequest(requestUrl) {
-  fetch(requestUrl)
+let divForCountry = document.querySelector("#country");
+let input = document.querySelector("input");
+let button = document.querySelector("button");
+function makeRequestToUnsplash() {
+  const requestOne = `https://restcountries.com/v3.1/name/${input.value}`;
+  fetch(requestOne)
     .then((res) => res.json())
     .then((data) => {
       data.forEach((countryObj) => {
@@ -10,6 +12,8 @@ function makeRequest(requestUrl) {
       });
     });
 }
+
+button.addEventListener(`click`, makeRequestToUnsplash);
 function createCountry(countryObj) {
   const countryDiv = document.createElement("div");
   const span = document.createElement("span");
@@ -21,4 +25,3 @@ function createCountry(countryObj) {
   countryDiv.append(span);
   divForCountry.append(countryDiv);
 }
-console.log(makeRequest(requestOne));
